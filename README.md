@@ -2,10 +2,10 @@
 
 **Condition-adaptive fusion for aero-engine remaining useful life prediction.**
 
-Companion repository for our MSSP submission *"Why RUL models sometimes predict
-the same value for every engine: an audit of 161 training runs and
-condition-based design rules"*. The repository contains only what a reviewer
-needs to read the paper and to reproduce the experiments.
+Companion repository for our MSSP submission *"Constant predictions in
+multi-condition aero-engine RUL models: causes, early detection, and
+condition-adaptive network design"*. The repository contains only what a
+reviewer needs to read the paper and to reproduce the experiments.
 
 ## Contents
 
@@ -33,6 +33,11 @@ result files (JSON/CSV) are committed here so the reported tables can be
 checked without rerunning training. Large probe-feature arrays and raw logs
 are not included.
 
+The C-MAPSS data are a U.S. Government work in the public domain distributed
+by the NASA Prognostics Data Repository. We acknowledge the repository and the
+data donors and cite Saxena and Goebel (2008) as the source; users employ the
+data at their own risk.
+
 ## Reproducing
 
 The scripts were developed on the authors' machine and carry absolute paths
@@ -54,7 +59,7 @@ tectonic main_cas.tex                 # rebuild the submitted PDF
 ## Authors
 
 - Chi Zhang — first author
-- Yuguo Zha — corresponding author, hugozha@nchu.edu.cn
+- Yuguo Zha — corresponding author, hugozha.nchu@gmail.com
 
 Affiliation: Department of Biomedical Engineering, College of Instrument
 Science and Optoelectronic Engineering, Nanchang Hangkong University,
