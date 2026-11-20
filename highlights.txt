@@ -1,7 +1,0 @@
-Highlights (Elsevier: max 5 bullets, 85 characters each including spaces)
-
-- 161 training runs: 37% on FD002 and 24% on FD004 end at one fixed output
-- A formula predicts the test error of a failed run to within 0.01 cycles
-- Failed models encode operating condition, not engine wear
-- Recovery needs a hundredfold gradient jump in the convolutional branch
-- Three cheap checks catch the failure and let a run be restarted
