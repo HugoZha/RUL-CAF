@@ -2,88 +2,54 @@
 
 **Condition-adaptive fusion for aero-engine remaining useful life prediction.**
 
-This repository contains the manuscript sources, figures, and supporting code
-for a study of silent training collapse in hybrid deep RUL predictors and the
-condition-adaptive design rules that avoid it.
+Companion repository for our MSSP submission *"Why RUL models sometimes predict
+the same value for every engine: an audit of 161 training runs and
+condition-based design rules"*. The repository contains only what a reviewer
+needs to read the paper and to reproduce the experiments.
 
-- **Paper:** *Silent collapse of hybrid deep RUL predictors: a mechanism study
-  and condition-adaptive design rules for multi-condition aero-engine
-  prognostics*
-- **Target journal:** *Mechanical Systems and Signal Processing* (Elsevier)
-- **Benchmark:** NASA C-MAPSS, subsets FD001–FD004
-- **Status:** submitted
-
-## What we found
-
-Across 161 training runs of a convolutional–recurrent–attention backbone, runs
-on the two multi-condition subsets often collapsed silently: 37.2% (FD002) and
-24.2% (FD004) converged to a constant predictor that outputs the training-label
-mean for every engine. The loss curve still looked healthy, yet the asymmetric
-prognostics score (PHM08) was 15–250 times worse. Instrumented training showed
-that recovery depends on the convolutional branch's gradient rising sharply
-before early stopping, and that the learned features encode operating condition
-rather than degradation. Choosing window length and depth by condition count,
-keeping branches that carry degradation signal, and running three cheap
-post-training checks make the failure detectable and avoidable.
-
-## Repository layout
+## Contents
 
 ```
-.
-├── compiled/            # ready-to-read PDFs of the manuscript
-│   ├── manuscript.pdf                       # main submission (cas-sc, 12 pp)
-│   ├── manuscript_reading_copy.pdf          # single-column reading copy
-│   └── manuscript_two_column_preview.pdf    # two-column layout proof
-├── manuscript/          # LaTeX sources ( Elsevier cas-sc / elsarticle )
-│   ├── main_cas.tex, frontmatter_cas.tex    # official single-column build
-│   ├── main.tex, main_preprint.tex          # two-column / reading builds
-│   ├── sec1_intro.tex … sec7_discussion.tex
-│   ├── bibliography_gen.tex, refs.bib, gen_biblio.py
-│   └── uncited_refs.tex                     # bookkeeping, not for submission
-├── figures/
-│   ├── vector_pdf/          # 8 publication figures, vector PDF
-│   ├── raster_png_300dpi/   # same 8 figures at 300 dpi
-│   └── editable/            # editable PPTX for figures 1 and 6
-├── supplementary/
-│   └── Supplementary_Material.docx          # S1–S10, 12 tables, 3 figures
-├── cover_letter/        # cover_letter.tex / .pdf
-├── highlights.txt       # 5 highlights, each <= 85 characters
-├── figure_scripts/      # regenerate all figures and the Word supplement
-└── experiment_scripts/  # E1/E2 drivers, PHM08 ablation, aggregate results
+manuscript.pdf              # submitted paper (Elsevier cas-sc, 12 pp)
+manuscript.docx             # Word copy of the same paper
+manuscript/                 # LaTeX sources; compile with: tectonic main_cas.tex
+figures/vector_pdf/         # 8 publication figures, vector PDF
+figures/raster_png_300dpi/  # same 8 figures at 300 dpi (also used by LaTeX)
+supplementary/              # Supplementary_Material.docx (S1-S10)
+cover_letter/               # cover letter (source and PDF)
+highlights.txt              # 5 highlights
+figure_scripts/             # scripts that regenerate all figures and the Word supplement
+experiment_scripts/         # E1/E2 drivers, PHM08 ablation, aggregate JSON/CSV results
 ```
-
-Figure index: `fig1_architecture`, `fig2_fingerprint`, `fig3_prevalence`,
-`fig4_tsne`, `fig5_escape_race`, `fig6_phase_diagram`, `fig8_attention_maps`,
-`fig9_seed_boxplot`. Five are used in the main text; the other three appear in
-the supplementary document.
-
-## Reproducing
-
-The figure and experiment scripts were developed on the author's machine and
-contain absolute paths (`ROOT`, `OUT`, `EXP` variables near the top of each
-file). Point these at your own checkout and data directory before rerunning.
-
-```bash
-# from figure_scripts/
-python3 gen_paper_figures.py          # figs 2/3/4/5/9 -> PNG + PDF
-python3 gen_paper_figures_extra.py    # fig 8
-python3 gen_fig1_fig6_pptx.py         # editable PPTX + PNG + PDF for figs 1/6
-python3 gen_supplementary_docx.py     # Supplementary_Material.docx
-
-# from manuscript/, with a TeX engine installed (e.g. tectonic or pdflatex)
-tectonic main_cas.tex                 # main submission PDF
-```
-
-`experiment_scripts/` holds the drivers (`e1_seeds.py`, `e2_probe_train.py`,
-`scan_collapse.py`, `run_paper_experiments.sh`) and the small aggregate results
-they produced (JSON/CSV). The large probe-feature arrays and raw run logs are
-not included.
 
 ## Data
 
-The NASA C-MAPSS dataset is distributed by the NASA Prognostics Data Repository
-and is **not** redistributed here. Download FD001–FD004 from the repository and
-place them where your local scripts expect them.
+NASA C-MAPSS (FD001–FD004) is available in the
+[`data-v1` release](https://github.com/HugoZha/RUL-CAF/releases/tag/data-v1)
+as `c-mapss.zip`. It contains the four train/test/RUL subsets and the original
+readme. The experiment scripts in `experiment_scripts/` read these files;
+point their `ROOT` variable at the extracted directory. The small aggregate
+result files (JSON/CSV) are committed here so the reported tables can be
+checked without rerunning training. Large probe-feature arrays and raw logs
+are not included.
+
+## Reproducing
+
+The scripts were developed on the authors' machine and carry absolute paths
+in `ROOT`, `OUT` and `EXP` near the top of each file; adjust them to your own
+checkout before running.
+
+```bash
+cd figure_scripts
+python3 gen_paper_figures.py          # figs 2/3/4/5/9 -> PNG + PDF
+python3 gen_paper_figures_extra.py    # fig 8
+python3 gen_fig1_fig6_pptx.py         # figs 1/6
+python3 gen_supplementary_docx.py     # Word supplement
+python3 gen_manuscript_docx.py        # rebuild Word paper from LaTeX + .aux
+
+cd ../manuscript
+tectonic main_cas.tex                 # rebuild the submitted PDF
+```
 
 ## Authors
 
@@ -94,12 +60,12 @@ Affiliation: Department of Biomedical Engineering, College of Instrument
 Science and Optoelectronic Engineering, Nanchang Hangkong University,
 Nanchang 330063, Jiangxi, China.
 
-## Citation
+**Funding.** Jiangxi Provincial Early-Career Talent Fund (20252BEJ730138) and
+Jiangxi Provincial Talent Introduction and Cultivation Fund (117C00230023).
 
-Citation details will be added once the paper is published. In the meantime,
-please cite the manuscript above.
+**Competing interests.** The authors declare none.
 
 ## License
 
 Code and figures are provided for academic review. For reuse beyond
-non-commercial research, please contact the corresponding author.
+non-commercial research, contact the corresponding author.
