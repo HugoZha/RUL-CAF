@@ -1,0 +1,56 @@
+\section{Introduction}
+\label{sec:intro}
+
+An aero-engine comes off the wing before it fails, and the decision rests on
+an estimate of how many cycles it can still run. That estimate, the remaining
+useful life (RUL), is now usually produced by a deep network
+\cite{jardine2006review,saxena2008damage,lei2018machinery,hu2022prognostics}.
+Physics-based degradation models have largely been replaced: convolutions
+pick up local patterns \cite{babu2016deep,li2018remaining}, recurrent layers
+track state \cite{zheng2017long,yuan2016fault,xiang2021multicellular}, and
+attention encoders handle long dependencies
+\cite{wang2024dvgtformer,zhang2024tatfa,kim2025dkam}. Most applied papers now
+use all three together, a convolutional front end (often a TCN
+\cite{bai2018empirical}), a bidirectional recurrent stage and one or more
+self-attention layers \cite{vaswani2017attention}, with differencing,
+positional encodings and dropout added along the way. We call this
+combination the hybrid backbone.
+
+Accuracy tables on NASA's C-MAPSS benchmark \cite{saxena2008damage} nearly
+always come from one training run per configuration. Hyperparameters are
+tuned as best-of-$k$, and whether the same configuration would train again
+is not reported. We have an archive of 161 runs of one such backbone, and the
+omission turns out to matter. On the two subsets with six operating
+conditions, 37.2\% of FD002 runs and 24.2\% of FD004 runs finished by
+predicting one fixed number for every engine, the mean of the training
+labels. None of the 81 runs on single-condition data did. Training loss
+falls normally, so a single RMSE near 43.8 looks like a mediocre
+hyperparameter choice, but the asymmetric score used in service is
+15--250$\times$ worse. Failures also cluster in particular window and depth
+settings, and for some of our best configurations the outcome changes with
+the random seed. Retraining such a model can quietly replace a good predictor
+with one that prints the fleet-average RUL for every engine.
+
+A run that ends this way is easy to recognise once you know what to look
+for. Section~\ref{sec:phenomenon} gives five signs that can be read from a
+log or a saved checkpoint, one of them a formula for the test RMSE of a
+failed run (Eq.~(\ref{eq:fingerprint})) that matches every such run in the
+archive to within 0.01 cycles. Why it happens took longer to work out. Probes
+on saved checkpoints and per-epoch records from six instrumented runs
+(Section~\ref{sec:mechanism}) show that every multi-condition run first
+outputs the same constant value: its internal features record which
+operating condition the engine is in rather than how far it has worn, and its
+attention weights become identical at every time step. Training starts to
+improve again only when gradients in the convolutional branch suddenly grow
+about a hundredfold, and this has to happen before early stopping ends the
+run. Section~\ref{sec:method} turns these observations into a short set of
+rules for choosing window length and depth, which we call CAS-Fuse, plus
+three cheap checks that can be applied to any finished model.
+Section~\ref{sec:experiments} tests the rules over five seeds.
+
+We are not trying to win the accuracy table; specialised models do better on
+some subsets (Section~\ref{sec:experiments}). Whether a configuration trains
+at all, reliably, when the seed changes has drawn little attention. Among the
+hybrid backbones used in applied RUL work, we have not found another
+configuration with a multi-seed audit, or an explanation of why its
+neighbours sometimes fail.

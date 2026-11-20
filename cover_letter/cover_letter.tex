@@ -1,0 +1,67 @@
+%% cover_letter.tex — standalone compile for MSSP submission
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{times}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+\setlength{\parskip}{0.6em}
+
+\begin{document}
+
+\begin{flushright}
+\today
+\end{flushright}
+
+\bigskip
+Dear Editors-in-Chief of \textit{Mechanical Systems and Signal Processing},
+
+\medskip
+Please consider the enclosed manuscript, ``Why RUL models sometimes predict
+the same value for every engine: an audit of 161 training runs and
+condition-based design rules'', for publication as a research paper.
+
+Hybrid networks that combine convolutional, recurrent and attention layers
+are common in work on aero-engine remaining useful life (RUL), and they are
+usually assessed with one training run per configuration on NASA C-MAPSS.
+We audited 161 runs of one such model and found that 37\% of FD002 runs and
+24\% of FD004 runs end by printing one fixed number for every engine, the
+mean of the training labels. None of the 81 single-condition runs did. A
+formula predicts the test RMSE of these failed runs to within 0.01 cycles,
+and the PHM08 score used in service is 15--250$\times$ worse than for a
+working model. Because the training loss falls normally, a single RMSE near
+43.8 looks like mediocre tuning; this is easy to miss in a one-number report.
+
+Probes of saved checkpoints and six instrumented re-training runs explain
+why. Every multi-condition run first spends 16--34 epochs outputting that
+average, with its internal features recording the operating condition rather
+than wear and its attention weighting every time step equally. Training
+starts to improve again only when gradients in the convolutional branch
+suddenly grow about a hundredfold, before early stopping ends the run. From
+this we set window length and depth by the number of operating conditions,
+keep several branches able to carry the degradation signal, and add three
+cheap checks after training (prediction spread, attention entropy and a long
+flat stretch in validation RMSE). Over five seeds the rules trained
+reliably on FD001/FD002/FD003; on FD004 the seed still decides, with six of
+eight runs failing and the two that worked agreeing at 19.53$\pm$0.07 RMSE.
+The checks catch those failures early enough to start a fresh run.
+
+We think the manuscript will interest MSSP readers because it concerns
+whether learned predictors used in machinery health monitoring can be
+trusted to train again, and because the per-epoch gradient, attention and
+feature traces released with the paper give a concrete basis for studying
+the optimisation. The same checks apply to other sensor-regression tasks
+with several operating conditions. A Word file of supplementary material
+accompanies the submission.
+
+The manuscript is original, has not been published, and is not under
+consideration elsewhere. All authors have approved it and declare no
+competing interests. Experimental data, training logs and analysis scripts
+accompany the submission.
+
+Thank you for your consideration.
+
+\medskip
+Sincerely,\\
+The Authors
+
+\end{document}

@@ -1,0 +1,44 @@
+%% main.tex — MSSP submission
+%% Compile: pdflatex -> bibtex -> pdflatex x2
+\documentclass[5p,10pt,twocolumn,number]{elsarticle}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+
+\journal{Mechanical Systems and Signal Processing}
+
+%% Journal two-column layout: Fig. 1 spans both columns so its labels stay
+%% legible.  The single-column reading version redefines this length.
+\newcommand{\figarch}{0.44\textwidth}
+
+\begin{document}
+
+%% Uniform table metrics: one size, one width, one column gap.
+\setlength{\tabcolsep}{3pt}
+\emergencystretch=2em
+%% Tighter floats: ten figures/tables share the page budget.
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{6pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+
+\input{frontmatter}
+
+
+\input{sec1_intro}
+\input{sec2_related}
+\input{sec3_phenomenon}
+\input{sec4_mechanism}
+\input{sec5_method}
+\input{sec6_experiments}
+\input{sec7_discussion}
+
+%% numeric style emulated via thebibliography (tectonic 0.14 has no bibtex)
+{\small\input{bibliography_gen.tex}}
+
+\end{document}
