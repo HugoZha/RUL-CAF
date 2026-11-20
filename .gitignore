@@ -1,0 +1,8 @@
+# Downloaded / generated data and run outputs (kept out of git)
+reproduction/data/
+reproduction/runs/
+reproduction/c-mapss.zip
+**/__pycache__/
+*.pyc
+.venv/
+.DS_Store

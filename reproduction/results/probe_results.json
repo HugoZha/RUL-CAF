@@ -1,0 +1,472 @@
+[
+  {
+    "tag": "FD002_L1",
+    "dataset": "FD002",
+    "ws": 20,
+    "L": 1,
+    "expectation": "healthy",
+    "test_rmse": 18.666099548339844,
+    "pred_std": 41.989097595214844,
+    "pred_mean": 72.73976135253906,
+    "y_std": 42.939273834228516,
+    "n_test": 259,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.7897183989223681,
+        "mean_max_weight": 0.3842567652463913
+      }
+    ],
+    "attn_entropy_mean": 0.7897183989223681,
+    "cond_cluster_inertia": 0.0001555762834213022,
+    "silhouette_rul_bucket": 0.09694605320692062,
+    "silhouette_condition": -0.07164883613586426,
+    "probe_cond_acc_cv": 0.32432432432432434,
+    "probe_rul_r2_cv": 0.7762536406517029,
+    "eta2_pred_by_cond": 0.020154541358351707,
+    "train_rul_cap_mean": 86.91335404304395,
+    "train_rul_cap_mean_per_cond": {
+      "0": 87.13920454545455,
+      "1": 87.10112943973844,
+      "2": 86.69620094976256,
+      "3": 86.74796848066978,
+      "4": 86.8843858776728,
+      "5": 86.78375015553067
+    }
+  },
+  {
+    "tag": "FD002_L2",
+    "dataset": "FD002",
+    "ws": 20,
+    "L": 2,
+    "expectation": "collapsed",
+    "test_rmse": 43.848533630371094,
+    "pred_std": 6.895686237839982e-05,
+    "pred_mean": 82.57452392578125,
+    "y_std": 42.939273834228516,
+    "n_test": 259,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.999994020713003,
+        "mean_max_weight": 0.18056674692779778
+      },
+      {
+        "layer": 2,
+        "norm_entropy": 0.9999866830675226,
+        "mean_max_weight": 0.18086656406521798
+      }
+    ],
+    "attn_entropy_mean": 0.9999903518902629,
+    "cond_cluster_inertia": 0.0001555762834213022,
+    "silhouette_rul_bucket": -0.009488875977694988,
+    "silhouette_condition": 0.0028895835857838392,
+    "probe_cond_acc_cv": 0.8223938223938224,
+    "probe_rul_r2_cv": 0.5778354406356812,
+    "train_rul_cap_mean": 86.91335404304395,
+    "train_rul_cap_mean_per_cond": {
+      "0": 87.13920454545455,
+      "1": 87.10112943973844,
+      "2": 86.69620094976256,
+      "3": 86.74796848066978,
+      "4": 86.8843858776728,
+      "5": 86.78375015553067
+    }
+  },
+  {
+    "tag": "FD002_L3",
+    "dataset": "FD002",
+    "ws": 20,
+    "L": 3,
+    "expectation": "healthy",
+    "test_rmse": 18.354692459106445,
+    "pred_std": 39.55224609375,
+    "pred_mean": 74.99530792236328,
+    "y_std": 42.939273834228516,
+    "n_test": 259,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.7221380252587167,
+        "mean_max_weight": 0.43517123758792875
+      },
+      {
+        "layer": 2,
+        "norm_entropy": 0.7860399076813146,
+        "mean_max_weight": 0.3834548905491829
+      },
+      {
+        "layer": 3,
+        "norm_entropy": 0.8351830745998182,
+        "mean_max_weight": 0.3460436940193176
+      }
+    ],
+    "attn_entropy_mean": 0.7811203358466164,
+    "cond_cluster_inertia": 0.0001555762834213022,
+    "silhouette_rul_bucket": 0.09762262552976608,
+    "silhouette_condition": -0.0693332627415657,
+    "probe_cond_acc_cv": 0.2972972972972973,
+    "probe_rul_r2_cv": 0.8095062375068665,
+    "eta2_pred_by_cond": 0.022351114079356194,
+    "train_rul_cap_mean": 86.91335404304395,
+    "train_rul_cap_mean_per_cond": {
+      "0": 87.13920454545455,
+      "1": 87.10112943973844,
+      "2": 86.69620094976256,
+      "3": 86.74796848066978,
+      "4": 86.8843858776728,
+      "5": 86.78375015553067
+    }
+  },
+  {
+    "tag": "FD002_L4",
+    "dataset": "FD002",
+    "ws": 20,
+    "L": 4,
+    "expectation": "collapsed",
+    "test_rmse": 43.84795379638672,
+    "pred_std": 7.190058386186138e-05,
+    "pred_mean": 82.57156372070312,
+    "y_std": 42.939273834228516,
+    "n_test": 259,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.9999967186074508,
+        "mean_max_weight": 0.1804876731708646
+      },
+      {
+        "layer": 2,
+        "norm_entropy": 0.9999943595183524,
+        "mean_max_weight": 0.18056534864008428
+      },
+      {
+        "layer": 3,
+        "norm_entropy": 0.9999963107861971,
+        "mean_max_weight": 0.18049707934260367
+      },
+      {
+        "layer": 4,
+        "norm_entropy": 0.9999962574557254,
+        "mean_max_weight": 0.18055315483361484
+      }
+    ],
+    "attn_entropy_mean": 0.9999959115919315,
+    "cond_cluster_inertia": 0.0001555762834213022,
+    "silhouette_rul_bucket": -0.01765652373433113,
+    "silhouette_condition": -0.009486437775194645,
+    "probe_cond_acc_cv": 0.7760617760617761,
+    "probe_rul_r2_cv": 0.5506682991981506,
+    "train_rul_cap_mean": 86.91335404304395,
+    "train_rul_cap_mean_per_cond": {
+      "0": 87.13920454545455,
+      "1": 87.10112943973844,
+      "2": 86.69620094976256,
+      "3": 86.74796848066978,
+      "4": 86.8843858776728,
+      "5": 86.78375015553067
+    }
+  },
+  {
+    "tag": "FD004_L1",
+    "dataset": "FD004",
+    "ws": 60,
+    "L": 1,
+    "expectation": "collapsed",
+    "test_rmse": 43.71388244628906,
+    "pred_std": 0.0003281902172602713,
+    "pred_mean": 82.99938201904297,
+    "y_std": 42.501338958740234,
+    "n_test": 222,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.9997813721834603,
+        "mean_max_weight": 0.08167641510566076
+      }
+    ],
+    "attn_entropy_mean": 0.9997813721834603,
+    "cond_cluster_inertia": 0.00013461249097669955,
+    "silhouette_rul_bucket": -0.011423246935009956,
+    "silhouette_condition": -0.003204209031537175,
+    "probe_cond_acc_cv": 0.7567567567567568,
+    "probe_rul_r2_cv": 0.09223288297653198,
+    "train_rul_cap_mean": 92.98519159496482,
+    "train_rul_cap_mean_per_cond": {
+      "0": 92.75894771029554,
+      "1": 93.09843885516045,
+      "2": 93.27311522048365,
+      "3": 93.0991090089099,
+      "4": 92.74355921195064,
+      "5": 93.09473913992578
+    }
+  },
+  {
+    "tag": "FD004_L2",
+    "dataset": "FD004",
+    "ws": 60,
+    "L": 2,
+    "expectation": "healthy",
+    "test_rmse": 20.32552719116211,
+    "pred_std": 42.2995491027832,
+    "pred_mean": 70.03399658203125,
+    "y_std": 42.501338958740234,
+    "n_test": 222,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.7752967365717484,
+        "mean_max_weight": 0.2484214077393214
+      },
+      {
+        "layer": 2,
+        "norm_entropy": 0.8839732853032775,
+        "mean_max_weight": 0.1681772372374932
+      }
+    ],
+    "attn_entropy_mean": 0.8296350109375129,
+    "cond_cluster_inertia": 0.00013461249097669955,
+    "silhouette_rul_bucket": 0.05790378898382187,
+    "silhouette_condition": -0.05611495301127434,
+    "probe_cond_acc_cv": 0.25225225225225223,
+    "probe_rul_r2_cv": 0.6800583600997925,
+    "eta2_pred_by_cond": 0.014476536773145199,
+    "train_rul_cap_mean": 92.98519159496482,
+    "train_rul_cap_mean_per_cond": {
+      "0": 92.75894771029554,
+      "1": 93.09843885516045,
+      "2": 93.27311522048365,
+      "3": 93.0991090089099,
+      "4": 92.74355921195064,
+      "5": 93.09473913992578
+    }
+  },
+  {
+    "tag": "FD004_L3",
+    "dataset": "FD004",
+    "ws": 60,
+    "L": 3,
+    "expectation": "healthy",
+    "test_rmse": 19.46352767944336,
+    "pred_std": 41.069156646728516,
+    "pred_mean": 67.78400421142578,
+    "y_std": 42.501338958740234,
+    "n_test": 222,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.8507100020424795,
+        "mean_max_weight": 0.20186619634429614
+      },
+      {
+        "layer": 2,
+        "norm_entropy": 0.8515090457463669,
+        "mean_max_weight": 0.20963471581538518
+      },
+      {
+        "layer": 3,
+        "norm_entropy": 0.8925689559871868,
+        "mean_max_weight": 0.14970718485613663
+      }
+    ],
+    "attn_entropy_mean": 0.864929334592011,
+    "cond_cluster_inertia": 0.00013461249097669955,
+    "silhouette_rul_bucket": 0.07468653470277786,
+    "silhouette_condition": -0.05794445797801018,
+    "probe_cond_acc_cv": 0.24774774774774774,
+    "probe_rul_r2_cv": 0.7604019045829773,
+    "eta2_pred_by_cond": 0.012160412035882473,
+    "train_rul_cap_mean": 92.98519159496482,
+    "train_rul_cap_mean_per_cond": {
+      "0": 92.75894771029554,
+      "1": 93.09843885516045,
+      "2": 93.27311522048365,
+      "3": 93.0991090089099,
+      "4": 92.74355921195064,
+      "5": 93.09473913992578
+    }
+  },
+  {
+    "tag": "FD004_L4",
+    "dataset": "FD004",
+    "ws": 60,
+    "L": 4,
+    "expectation": "healthy",
+    "test_rmse": 23.271364212036133,
+    "pred_std": 41.097537994384766,
+    "pred_mean": 73.5374526977539,
+    "y_std": 42.501338958740234,
+    "n_test": 222,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.7367854663881205,
+        "mean_max_weight": 0.30309842427571615
+      },
+      {
+        "layer": 2,
+        "norm_entropy": 0.7839184605469138,
+        "mean_max_weight": 0.26567455430825554
+      },
+      {
+        "layer": 3,
+        "norm_entropy": 0.8572300662428646,
+        "mean_max_weight": 0.20938933690388997
+      },
+      {
+        "layer": 4,
+        "norm_entropy": 0.8800095966306783,
+        "mean_max_weight": 0.18132608036200207
+      }
+    ],
+    "attn_entropy_mean": 0.8144858974521443,
+    "cond_cluster_inertia": 0.00013461249097669955,
+    "silhouette_rul_bucket": 0.05503975972533226,
+    "silhouette_condition": -0.052250076085329056,
+    "probe_cond_acc_cv": 0.22972972972972974,
+    "probe_rul_r2_cv": 0.6643116474151611,
+    "eta2_pred_by_cond": 0.017507940530776978,
+    "train_rul_cap_mean": 92.98519159496482,
+    "train_rul_cap_mean_per_cond": {
+      "0": 92.75894771029554,
+      "1": 93.09843885516045,
+      "2": 93.27311522048365,
+      "3": 93.0991090089099,
+      "4": 92.74355921195064,
+      "5": 93.09473913992578
+    }
+  },
+  {
+    "tag": "FD004_L3_final",
+    "dataset": "FD004",
+    "ws": 60,
+    "L": 3,
+    "expectation": "verify",
+    "test_rmse": 43.707969665527344,
+    "pred_std": 8.451176108792424e-05,
+    "pred_mean": 82.97390747070312,
+    "y_std": 42.501338958740234,
+    "n_test": 222,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.9999807709354466,
+        "mean_max_weight": 0.07875273299093048
+      },
+      {
+        "layer": 2,
+        "norm_entropy": 0.9999908542228957,
+        "mean_max_weight": 0.07846928816288709
+      },
+      {
+        "layer": 3,
+        "norm_entropy": 0.9999873860407684,
+        "mean_max_weight": 0.07867555292323232
+      }
+    ],
+    "attn_entropy_mean": 0.9999863370663702,
+    "cond_cluster_inertia": 0.00013461249097669955,
+    "silhouette_rul_bucket": -0.010181493125855923,
+    "silhouette_condition": -0.011039639823138714,
+    "probe_cond_acc_cv": 0.6216216216216216,
+    "probe_rul_r2_cv": 0.03743380308151245,
+    "train_rul_cap_mean": 92.98519159496482,
+    "train_rul_cap_mean_per_cond": {
+      "0": 92.75894771029554,
+      "1": 93.09843885516045,
+      "2": 93.27311522048365,
+      "3": 93.0991090089099,
+      "4": 92.74355921195064,
+      "5": 93.09473913992578
+    }
+  },
+  {
+    "tag": "FD001_L1_final",
+    "dataset": "FD001",
+    "ws": 40,
+    "L": 1,
+    "expectation": "healthy(single-cond)",
+    "test_rmse": 13.531323432922363,
+    "pred_std": 42.03617477416992,
+    "pred_mean": 73.5193862915039,
+    "y_std": 39.9340934753418,
+    "n_test": 96,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.8909291135959136,
+        "mean_max_weight": 0.20753969978541137
+      }
+    ],
+    "attn_entropy_mean": 0.8909291135959136,
+    "silhouette_rul_bucket": 0.1008334830403328,
+    "probe_rul_r2_cv": 0.8655511140823364
+  },
+  {
+    "tag": "FD002_L3_final",
+    "dataset": "FD002",
+    "ws": 20,
+    "L": 3,
+    "expectation": "healthy",
+    "test_rmse": 19.733440399169922,
+    "pred_std": 37.99050521850586,
+    "pred_mean": 75.72884368896484,
+    "y_std": 42.939273834228516,
+    "n_test": 259,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.839633351878116,
+        "mean_max_weight": 0.34425215870141984
+      },
+      {
+        "layer": 2,
+        "norm_entropy": 0.7694679561414217,
+        "mean_max_weight": 0.4088206171989441
+      },
+      {
+        "layer": 3,
+        "norm_entropy": 0.6999690187604803,
+        "mean_max_weight": 0.45827626734972
+      }
+    ],
+    "attn_entropy_mean": 0.7696901089266728,
+    "cond_cluster_inertia": 0.0001555762834213022,
+    "silhouette_rul_bucket": 0.08876611292362213,
+    "silhouette_condition": -0.08157244324684143,
+    "probe_cond_acc_cv": 0.36293436293436293,
+    "probe_rul_r2_cv": 0.7812435030937195,
+    "eta2_pred_by_cond": 0.022161228582262993,
+    "train_rul_cap_mean": 86.91335404304395,
+    "train_rul_cap_mean_per_cond": {
+      "0": 87.13920454545455,
+      "1": 87.10112943973844,
+      "2": 86.69620094976256,
+      "3": 86.74796848066978,
+      "4": 86.8843858776728,
+      "5": 86.78375015553067
+    }
+  },
+  {
+    "tag": "FD003_L1_final",
+    "dataset": "FD003",
+    "ws": 30,
+    "L": 1,
+    "expectation": "healthy(single-cond)",
+    "test_rmse": 16.2307186126709,
+    "pred_std": 42.23902130126953,
+    "pred_mean": 77.69580078125,
+    "y_std": 39.16608428955078,
+    "n_test": 100,
+    "attention": [
+      {
+        "layer": 1,
+        "norm_entropy": 0.9311527527611831,
+        "mean_max_weight": 0.21745617538690568
+      }
+    ],
+    "attn_entropy_mean": 0.9311527527611831,
+    "silhouette_rul_bucket": 0.1383931189775467,
+    "probe_rul_r2_cv": 0.805157482624054
+  }
+]

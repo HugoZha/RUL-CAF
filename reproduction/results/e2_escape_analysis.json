@@ -1,0 +1,62 @@
+{
+  "FD002_L2": {
+    "final": 19.04012107849121,
+    "collapsed": false,
+    "plateau_len": 34,
+    "escape_ep": 39,
+    "grad_spike": 163.3,
+    "ent_at_escape": 0.9321,
+    "cond_before": 0.7,
+    "cond_after": 0.4
+  },
+  "FD002_L3": {
+    "final": 18.58492660522461,
+    "collapsed": false,
+    "plateau_len": 30,
+    "escape_ep": 34,
+    "grad_spike": 150.0,
+    "ent_at_escape": 0.9349,
+    "cond_before": 0.7,
+    "cond_after": 0.32
+  },
+  "FD002_L2_s7": {
+    "final": 43.86701202392578,
+    "collapsed": true,
+    "plateau_len": 25,
+    "escape_ep": null,
+    "last_val": 42.1,
+    "last_ent": 1.0,
+    "last_cond": 0.72,
+    "last_genc": 1.61
+  },
+  "FD004_L1": {
+    "final": 20.917612075805664,
+    "collapsed": false,
+    "plateau_len": 16,
+    "escape_ep": 21,
+    "grad_spike": 128.7,
+    "ent_at_escape": 0.9836,
+    "cond_before": 0.68,
+    "cond_after": 0.34
+  },
+  "FD004_L3": {
+    "final": 19.60030174255371,
+    "collapsed": false,
+    "plateau_len": 26,
+    "escape_ep": 31,
+    "grad_spike": 235.0,
+    "ent_at_escape": 0.9937,
+    "cond_before": 0.62,
+    "cond_after": 0.29
+  },
+  "FD004_L3_s123": {
+    "final": 20.485624313354492,
+    "collapsed": false,
+    "plateau_len": 32,
+    "escape_ep": 37,
+    "grad_spike": 169.1,
+    "ent_at_escape": 0.9503,
+    "cond_before": 0.48,
+    "cond_after": 0.39
+  }
+}

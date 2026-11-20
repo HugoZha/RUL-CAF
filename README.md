@@ -18,6 +18,17 @@ convenience of reviewers.
 | `manuscript.docx` | Word copy of the same paper |
 | `supplementary/Supplementary_Material.docx` | Supplementary sections S1–S10 and tables |
 | `figures/vector_pdf/` | The eight figures of the paper, vector PDF |
+| [`reproduction/`](reproduction/README.md) | Full reproduction package: code, exact data splits, evaluation, five-seed audit and tutorial |
+
+## Reproduction
+
+The `reproduction/` folder contains everything needed to regenerate the
+reported experiments: the C-MAPSS preprocessing and 85/15 window splits, the
+CAS-Fuse model (TCN + BiGRU + Transformer), training and evaluation scripts,
+the multi-seed stability audit with collapse tripwires, and the archived
+result files behind Tables 7–10. See
+[`reproduction/REPRODUCE.md`](reproduction/REPRODUCE.md) for the complete
+walkthrough (Chinese: [`REPRODUCE_CN.md`](reproduction/REPRODUCE_CN.md)).
 
 ## Data
 
