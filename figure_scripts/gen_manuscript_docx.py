@@ -137,12 +137,12 @@ def para(text="", style=None, align=None, space_after=None):
     return p
 
 # ---------------------------------------------------------------- title block
-para("Why RUL models sometimes predict the same value for every engine: an audit of 161 training runs and condition-based design rules",
+para("Constant predictions in multi-condition aero-engine RUL models: causes, early detection, and condition-adaptive network design",
      align=WD_ALIGN_PARAGRAPH.CENTER, space_after=10).runs[0].bold = True
 para("Chi Zhang, Yuguo Zha*", align=WD_ALIGN_PARAGRAPH.CENTER, space_after=2)
 para("Department of Biomedical Engineering, College of Instrument Science and Optoelectronic Engineering, Nanchang Hangkong University, Nanchang 330063, Jiangxi, China",
      align=WD_ALIGN_PARAGRAPH.CENTER, space_after=2).runs[0].italic = True
-para("* Corresponding author. E-mail: hugozha@nchu.edu.cn", align=WD_ALIGN_PARAGRAPH.CENTER, space_after=12).runs[0].font.size = Pt(9)
+para("* Corresponding author. E-mail: hugozha.nchu@gmail.com", align=WD_ALIGN_PARAGRAPH.CENTER, space_after=12).runs[0].font.size = Pt(9)
 
 def heading(text, level):
     p = para(text, style=f"Heading {level}")

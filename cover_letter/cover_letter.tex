@@ -2,6 +2,7 @@
 \documentclass[11pt]{article}
 \usepackage[a4paper,margin=2.5cm]{geometry}
 \usepackage{times}
+\usepackage{graphicx}
 \usepackage[hidelinks]{hyperref}
 \pagestyle{empty}
 \setlength{\parskip}{0.6em}
@@ -16,9 +17,9 @@
 Dear Editors-in-Chief of \textit{Mechanical Systems and Signal Processing},
 
 \medskip
-Please consider the enclosed manuscript, ``Why RUL models sometimes predict
-the same value for every engine: an audit of 161 training runs and
-condition-based design rules'', for publication as a research paper.
+Please consider the enclosed manuscript, ``Constant predictions in
+multi-condition aero-engine RUL models: causes, early detection, and
+condition-adaptive network design'', for publication as a research paper.
 
 Hybrid networks that combine convolutional, recurrent and attention layers
 are common in work on aero-engine remaining useful life (RUL), and they are
@@ -60,31 +61,53 @@ Early-Career Talent Fund (grant no. 20252BEJ730138) and the Jiangxi Provincial
 Talent Introduction and Cultivation Fund (grant no. 117C00230023). The
 processed data, experiment scripts, training logs and analysis code are
 available in a tagged release of our repository at
-\url{https://github.com/HugoZha/RUL-CAF/releases}.
+\url{https://github.com/HugoZha/RUL-CAF/releases}. The C-MAPSS data are a
+U.S.\ Government work in the public domain distributed by the NASA
+Prognostics Data Repository; we acknowledge the repository and the data
+donors and cite Saxena and Goebel (2008) as the source dataset.
 
 Following the journal's practice, we would like to suggest the following
-colleagues as potential reviewers. We have no recent collaboration or other
-conflict of interest with any of them, and the suggestion is offered only for
-the editors' consideration.
+colleagues as potential reviewers. Each is active in an area directly
+relevant to this work, as noted below. We have no recent collaboration or
+other conflict of interest with any of them, and the suggestion is offered
+only for the editors' consideration.
 
 \begin{enumerate}
   \item Prof. Zhigang Tian, Department of Mechanical Engineering, University
-  of Alberta, Edmonton, Canada. E-mail: ztian@ualberta.ca
+  of Alberta, Edmonton, Canada. E-mail: ztian@ualberta.ca.
+  \emph{Expertise in machine prognostics and remaining-useful-life prediction
+  under varying operating conditions, including recent work in this journal.}
+
   \item Dr. Meng Ma, School of Mechanical Engineering, Xi'an Jiaotong
-  University, Xi'an, China. E-mail: meng\_ma@xjtu.edu.cn
+  University, Xi'an, China. E-mail: meng\_ma@xjtu.edu.cn.
+  \emph{Expertise in data-driven diagnostics and health management of
+  propulsion systems and in deep learning for condition monitoring.}
+
   \item Dr. Zhenghua Chen, James Watt School of Engineering, University of
-  Glasgow, Glasgow, UK. E-mail: Zhenghua.Chen@glasgow.ac.uk
+  Glasgow, Glasgow, UK. E-mail: Zhenghua.Chen@glasgow.ac.uk.
+  \emph{Expertise in turbofan-engine RUL prediction and time-series
+  representation learning, including a recent review of the field.}
+
   \item Prof. Michael Pecht, Department of Mechanical Engineering, University
-  of Maryland, College Park, USA. E-mail: pecht@umd.edu
+  of Maryland, College Park, USA. E-mail: pecht@umd.edu.
+  \emph{Broad expertise in prognostics and health management and in
+  data-driven and fusion-based approaches to remaining useful life.}
+
   \item Dr. Spyridon Plakias, Department of Electrical and Computer
   Engineering, Democritus University of Thrace, Xanthi, Greece.
-  E-mail: splakias@ee.duth.gr
+  E-mail: splakias@ee.duth.gr.
+  \emph{Expertise in deep learning for aircraft-engine RUL estimation on
+  the NASA C-MAPSS data and in attention-based models.}
 \end{enumerate}
 
 Thank you for your consideration.
 
 \medskip
-Sincerely,\\
-The Authors
+Sincerely,\\[0.4em]
+
+\noindent\includegraphics[width=4.2cm]{yuguo_zha_signature.png}\\[0.2em]
+Yuguo Zha\\
+Corresponding author\\
+E-mail: hugozha.nchu@gmail.com
 
 \end{document}

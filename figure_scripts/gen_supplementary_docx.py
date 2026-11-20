@@ -226,7 +226,7 @@ normal.paragraph_format.space_after = Pt(6)
 
 hp = sec.header.paragraphs[0]
 hp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-hr = hp.add_run("Supplementary Material  |  Why RUL models sometimes predict the same value for every engine")
+hr = hp.add_run("Supplementary Material  |  Constant predictions in multi-condition aero-engine RUL models")
 hr.font.name = "Times New Roman"
 hr.font.size = Pt(8)
 hr.font.color.rgb = MUTED
@@ -254,8 +254,8 @@ r.font.color.rgb = ACCENT
 p = doc.add_paragraph()
 p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 p.paragraph_format.space_after = Pt(12)
-r = p.add_run("Why RUL models sometimes predict the same value for every engine: an "
-              "audit of 161 training runs and condition-based design rules")
+r = p.add_run("Constant predictions in multi-condition aero-engine RUL models: causes, "
+              "early detection, and condition-adaptive network design")
 r.font.name = "Times New Roman"
 r.font.size = Pt(12.5)
 r.bold = True
@@ -266,7 +266,7 @@ for line in [
     "Department of Biomedical Engineering, College of Instrument Science and "
     "Optoelectronic Engineering, Nanchang Hangkong University, "
     "Nanchang 330063, Jiangxi, China",
-    "* Corresponding author: hugozha@nchu.edu.cn",
+    "* Corresponding author: hugozha.nchu@gmail.com",
 ]:
     p = doc.add_paragraph()
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
